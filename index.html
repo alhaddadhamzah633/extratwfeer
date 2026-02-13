@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اكسترا توفير - للملابس الجاهزة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f0f9ff, #e6f7ff);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            max-width: 650px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(120deg, #1877F2, #0d5bb5);
+            color: white;
+            padding: 30px 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #ffd700, transparent);
+        }
+        
+        .store-name {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            line-height: 1.3;
+        }
+        
+        .english-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            opacity: 0.95;
+            margin-top: 5px;
+        }
+        
+        .tagline {
+            background: #f0f8ff;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1877F2;
+            margin: 25px 20px;
+            border-radius: 12px;
+            border-left: 4px solid #1877F2;
+        }
+        
+        .products {
+            padding: 0 25px 20px;
+            text-align: center;
+        }
+        
+        .products-title {
+            font-size: 1.4rem;
+            color: #1877F2;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .products-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .product-item {
+            background: #f0f8ff;
+            padding: 12px 8px;
+            border-radius: 10px;
+            font-weight: 500;
+            color: #1877F2;
+            transition: all 0.2s;
+        }
+        
+        .product-item:hover {
+            background: #e6f2ff;
+            transform: translateY(-2px);
+        }
+        
+        .social-section {
+            background: #fafafa;
+            padding: 25px;
+            margin: 25px 20px;
+            border-radius: 15px;
+            border: 1px solid #f0f0f0;
+            text-align: center;
+        }
+        
+        .social-title {
+            font-size: 1.4rem;
+            color: #1877F2;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        
+        .social-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #1877F2;
+            border-radius: 3px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        
+        .social-btn {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .social-btn i {
+            font-size: 1.9rem;
+            margin-bottom: 6px;
+        }
+        
+        .whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+        
+        .facebook {
+            background: linear-gradient(135deg, #1877F2, #4267B2);
+        }
+        
+        .instagram {
+            background: linear-gradient(135deg, #E1306C, #C13584, #833AB4);
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+        
+        .whatsapp:hover {
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.5);
+        }
+        
+        .facebook:hover {
+            box-shadow: 0 0 20px rgba(24, 119, 242, 0.5);
+        }
+        
+        .instagram:hover {
+            box-shadow: 0 0 20px rgba(225, 48, 108, 0.5);
+        }
+        
+        .info-section {
+            background: #f8fcff;
+            padding: 25px;
+            margin: 20px;
+            border-radius: 15px;
+            border: 1px solid #e6f2ff;
+        }
+        
+        .info-title {
+            font-size: 1.4rem;
+            color: #1877F2;
+            margin-bottom: 15px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 8px;
+        }
+        
+        .info-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #1877F2;
+            border-radius: 3px;
+        }
+        
+        .address {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin: 15px 0;
+            text-align: center;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .phone {
+            display: block;
+            text-align: center;
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #1877F2;
+            margin: 15px 0;
+            text-decoration: none;
+            direction: ltr;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+        
+        .phone:hover {
+            color: #0d5bb5;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            font-size: 0.95rem;
+            border-top: 1px solid #f0f0f0;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 480px) {
+            .store-name {
+                font-size: 1.8rem;
+            }
+            
+            .english-name {
+                font-size: 1.1rem;
+            }
+            
+            .tagline {
+                font-size: 1.15rem;
+                margin: 20px 15px;
+            }
+            
+            .products-list {
+                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+                gap: 12px;
+            }
+            
+            .product-item {
+                padding: 10px 5px;
+                font-size: 0.95rem;
+            }
+            
+            .social-links {
+                gap: 15px;
+            }
+            
+            .social-btn {
+                width: 95px;
+                height: 95px;
+            }
+            
+            .social-btn i {
+                font-size: 1.7rem;
+            }
+            
+            .social-btn span {
+                font-size: 0.85rem;
+            }
+            
+            .address {
+                font-size: 1.05rem;
+            }
+            
+            .phone {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="store-name">اكسترا توفير</div>
+            <div class="english-name">EXTRA TWFEER</div>
+        </div>
+        
+        <div class="tagline">للملابس الجاهزة - نسائي ولادي وبناتي</div>
+        
+        <div class="products">
+            <div class="products-title">منتجاتنا</div>
+            <div class="products-list">
+                <div class="product-item">ملابس نسائية</div>
+                <div class="product-item">ملابس أولادي</div>
+                <div class="product-item">ملابس بناتي</div>
+                <div class="product-item">فساتين</div>
+                <div class="product-item">طقمات</div>
+                <div class="product-item">بلايز</div>
+            </div>
+        </div>
+        
+        <div class="social-section">
+            <div class="social-title">تابعونا على وسائل التواصل</div>
+            <div class="social-links">
+                <a href="https://chat.whatsapp.com/CyU2qMBy4yZKSHG0RbGaHe" target="_blank" class="social-btn whatsapp" aria-label="واتساب">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>واتساب</span>
+                </a>
+                <a href="https://www.facebook.com/share/14WQwQbZVA7/" target="_blank" class="social-btn facebook" aria-label="فيسبوك">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>فيسبوك</span>
+                </a>
+                <a href="https://www.instagram.com/extratwfeer?igsh=cTRqMWo2MXA4bDlt" target="_blank" class="social-btn instagram" aria-label="إنستجرام">
+                    <i class="fab fa-instagram"></i>
+                    <span>إنستجرام</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <div class="info-title">معلومات التواصل</div>
+            <div class="address">
+                <i class="fas fa-map-marker-alt" style="color:#1877F2; margin-left:8px;"></i>
+                صنعاء - شارع جمال - جوار السفارة المصرية
+            </div>
+            <a href="tel:785046060" class="phone">
+                <i class="fas fa-phone"></i> 774798062
+            </a>
+        </div>
+        
+        <div class="footer">
+            &copy; 2026 اكسترا توفير - للملابس الجاهزة 👗👔
+        </div>
+    </div>
+</body>
+</html>
